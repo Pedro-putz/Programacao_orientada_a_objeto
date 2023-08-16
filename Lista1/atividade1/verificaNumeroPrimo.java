@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class VerificarNumeroPrimo {
     public static boolean ehPrimo(int numero) {
         if (numero <= 1) {
@@ -16,17 +14,11 @@ public class VerificarNumeroPrimo {
     }
     
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        
-        System.out.print("Digite um numero para verificar se e primo: ");
-        int numero = scanner.nextInt();
-        
+        int numero = 17; 
         if (ehPrimo(numero)) {
             System.out.println(numero + " e um numero primo.");
         } else {
             System.out.println(numero + " nao e um numero primo.");
         }
-        
-        scanner.close();
     }
 }
