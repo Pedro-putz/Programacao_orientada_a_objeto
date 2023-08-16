@@ -1,18 +1,18 @@
 import java.util.Scanner;
 
-public class VerificarNumeroPrimo {
-    public static boolean ehPrimo(int numero) {
-        if (numero <= 1) {
-            return false;
+public class VerificadorPrimo {
+    public static int verificaNumeroPrimo(Integer n) {
+        if (n <= 1) {
+            return 0; // Não é primo
         }
         
-        for (int i = 2; i <= Math.sqrt(numero); i++) {
-            if (numero % i == 0) {
-                return false;
+        for (int i = 2; i <= Math.sqrt(n); i++) {
+            if (n % i == 0) {
+                return 0; // Não é primo
             }
         }
         
-        return true;
+        return 1; // É primo
     }
     
     public static void main(String[] args) {
@@ -21,7 +21,9 @@ public class VerificarNumeroPrimo {
         System.out.print("Digite um numero para verificar se e primo: ");
         int numero = scanner.nextInt();
         
-        if (ehPrimo(numero)) {
+        int resultado = verificaNumeroPrimo(numero);
+        
+        if (resultado == 1) {
             System.out.println(numero + " e um numero primo.");
         } else {
             System.out.println(numero + " nao e um numero primo.");
